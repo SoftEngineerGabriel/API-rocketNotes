@@ -1,8 +1,6 @@
 const { request } = require("express");
 
-
 const routes = require("./routes");
-
 
 const express = require ("express");
 
