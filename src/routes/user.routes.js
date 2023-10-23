@@ -2,12 +2,12 @@ const { Router } = require("express");
 
 const UserController = require("../controllers/UserController");
 
-const usersRouter = Router();
+const userRoutes = Router();
 
-const userController  = new UserController();
+const userController = new UserController();
 
 //Query Params
-usersRouter.post("/", userController.create);
+userRoutes.post("/", userController.create);
+userRoutes.put("/:id", userController.update);
 
-
-module.exports = usersRouter;
+module.exports = userRoutes;
