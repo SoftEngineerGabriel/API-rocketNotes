@@ -6,10 +6,10 @@ function ensureAuthenticated( request, response, next) {
     const authHeader = request.headers.authorization;
 
     if(!authHeader) {
-        throw new AppError("JWT Token inválido", 401)
+        throw new AppError("JWT Token não informado", 401)
     }
 
-    const [ , token] = token.split('');
+    const [ , token] = authHeader.split(' ');
 
     try{
         const { sub: user_id} = verify(token, authConfig.jwt.secret);
